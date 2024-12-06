@@ -9,18 +9,18 @@
   myNixOS.stylix.enable = lib.mkDefault true;
 
   # Central European time zone
-  time.timeZone = "Europe/Bratislava";
+  time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "sk_SK.UTF-8";
-    LC_IDENTIFICATION = "sk_SK.UTF-8";
-    LC_MEASUREMENT = "sk_SK.UTF-8";
-    LC_MONETARY = "sk_SK.UTF-8";
-    LC_NAME = "sk_SK.UTF-8";
-    LC_NUMERIC = "sk_SK.UTF-8";
-    LC_PAPER = "sk_SK.UTF-8";
-    LC_TELEPHONE = "sk_SK.UTF-8";
-    LC_TIME = "sk_SK.UTF-8";
+    LC_ADDRESS = "en_IN.UTF-8";
+    LC_IDENTIFICATION = "en_IN.UTF-8";
+    LC_MEASUREMENT = "en_IN.UTF-8";
+    LC_MONETARY = "en_IN.UTF-8";
+    LC_NAME = "en_IN.UTF-8";
+    LC_NUMERIC = "en_IN.UTF-8";
+    LC_PAPER = "en_IN.UTF-8";
+    LC_TELEPHONE = "en_IN.UTF-8";
+    LC_TIME = "en_IN.UTF-8";
   };
 
   security.rtkit.enable = true;
@@ -51,11 +51,8 @@
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
 
-    opengl = {
-      enable = true;
-      driSupport32Bit = true;
-      # driSupport = true;
-    };
+    graphics.enable
+    graphics.enable32Bit
   };
 
   programs.dconf.enable = true;
