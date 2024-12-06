@@ -51,8 +51,8 @@
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
 
-    graphics.enable
-    graphics.enable32Bit
+    graphics.enable = true;
+    graphics.enable32Bit = true;
   };
 
   programs.dconf.enable = true;
