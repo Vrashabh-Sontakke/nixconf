@@ -41,8 +41,8 @@
 
     startScripts = {
       mpvpaper = pkgs.writeShellScriptBin "mpvpaper" ''
-        ${lib.getExe pkgs.mpvpaper} -vs -o "no-audio loop" DP-3 /home/yurii/Documents/wallpaper.mp4 &
-        ${lib.getExe pkgs.mpvpaper} -vs -o "no-audio loop" HDMI-A-1 /home/yurii/Documents/wallpaper.mp4 &
+        ${lib.getExe pkgs.mpvpaper} -vs -o "no-audio loop" DP-3 /home/vrash/Documents/wallpaper.mp4 &
+        ${lib.getExe pkgs.mpvpaper} -vs -o "no-audio loop" HDMI-A-1 /home/vrash/Documents/wallpaper.mp4 &
       '';
     };
 
@@ -56,8 +56,8 @@
 
   home = {
     stateVersion = "22.11";
-    homeDirectory = lib.mkDefault "/home/yurii";
-    username = "yurii";
+    homeDirectory = lib.mkDefault "/home/vrash";
+    username = "vrash";
 
     packages = with pkgs; [
       bottles

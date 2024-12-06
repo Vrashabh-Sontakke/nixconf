@@ -7,7 +7,7 @@
   programs.rbw = {
     enable = true;
     settings = {
-      email = "yurii@goxore.com";
+      email = "vrash@sontakke.in";
       base_url = "https://api.bitwarden.com/";
       identity_url = "https://identity.bitwarden.com/";
       lock_timeout = 300;

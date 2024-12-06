@@ -20,7 +20,7 @@
 
     hyprland.enable = true;
     home-users = {
-      "yurii" = {
+      "vrash" = {
         userConfig = ./home.nix;
         userSettings = {
           extraGroups = ["docker" "libvirtd" "networkmanager" "wheel" "adbusers"];

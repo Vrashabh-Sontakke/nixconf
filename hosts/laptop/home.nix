@@ -8,8 +8,8 @@
 }: {
   imports = [outputs.homeManagerModules.default];
 
-  programs.git.userName = "yurii";
-  programs.git.userEmail = "yurii@goxore.com";
+  programs.git.userName = "vrash";
+  programs.git.userEmail = "vrash@sontakke.in";
 
   myHomeManager.impermanence.data.directories = [
     "nixconf"
@@ -36,28 +36,16 @@
     bundles.general.enable = true;
     bundles.desktop-full.enable = true;
 
-    bundles.gaming.enable = true;
+    # bundles.gaming.enable = true;
 
     pipewire.enable = true;
     tenacity.enable = true;
 
-    monitors = let
-      # edp = {
-      #   width = 1920;
-      #   height = 1080;
-      #   refreshRate = 144.;
-      #   x = 0;
-      #   y = 500;
-      #   # x = 760;
-      #   # y = 1440;
-      # };
-    in {
-      # "eDP-1" = edp;
-      # "eDP-2" = edp;
-      "HDMI-A-1" = {
-        width = 3440;
-        height = 1440;
-        refreshRate = 100.;
+    monitors = {
+      "eDP-2" = {
+        width = 1920;
+        height = 1080;
+        refreshRate = 120.;
         # x = 1920;
         # y = 0;
         # x = 0;
@@ -65,21 +53,21 @@
       };
     };
 
-    workspaces = {
-      "2" = {
-        monitorId = 0;
-        autostart = with pkgs; [
-         (lib.getExe firefox)
-        ];
-      };
-      "10" = {
-        monitorId = 1;
-        autostart =  with pkgs; [
-          (lib.getExe telegram-desktop)
-          (lib.getExe vesktop)
-        ];
-      };
-    };
+    # workspaces = {
+    #   "2" = {
+    #     monitorId = 0;
+    #     autostart = with pkgs; [
+    #      (lib.getExe firefox)
+    #     ];
+    #   };
+    #   "10" = {
+    #     monitorId = 1;
+    #     autostart =  with pkgs; [
+    #       (lib.getExe telegram-desktop)
+    #       (lib.getExe vesktop)
+    #     ];
+    #   };
+    # };
 
     keybinds = {
       "SUPER, Z".package = inputs.woomer.packages.${pkgs.system}.default;
@@ -88,62 +76,16 @@
   };
 
   home = {
-    username = "yurii";
-    homeDirectory = lib.mkDefault "/home/yurii";
-    stateVersion = "22.11";
+    username = "vrash";
+    homeDirectory = lib.mkDefault "/home/vrash";
+    stateVersion = "24.11";
 
     packages = with pkgs; [
-      obs-studio
+      # obs-studio
       wf-recorder
-      prismlauncher
       tidal-hifi
-      gnome.gnome-sound-recorder
-
-      opencomposite
+      gnome-sound-recorder
     ];
   };
 
-  xdg.configFile."openxr/1/active_runtime.json".text =
-  ''
-    {
-        "file_format_version" : "1.0.0",
-        "runtime" : 
-        {
-            "VALVE_runtime_is_steamvr" : true,
-            "library_path" : "/home/yurii/.local/share/Steam/steamapps/common/SteamVR/bin/linux64/vrclient.so",
-            "name" : "SteamVR"
-        }
-    }
-  '';
-
-  # xdg.configFile."openxr/1/active_runtime.json".text =
-  # ''
-  #   {
-  #     "file_format_version": "1.0.0",
-  #     "runtime": {
-  #         "name": "Monado",
-  #         "library_path": "${pkgs.wivrn}/lib/wivrn/libopenxr_wivrn.so",
-  #         "MND_libmonado_path": "${pkgs.wivrn}/lib/wivrn/libmonado.so"
-  #     }
-  #   }
-  # '';
-  # xdg.configFile."openvr/openvrpaths.vrpath".text = ''
-  #   {
-  #     "config" :
-  #     [
-  #       "${config.xdg.dataHome}/Steam/config"
-  #     ],
-  #     "external_drivers" : null,
-  #     "jsonid" : "vrpathreg",
-  #     "log" :
-  #     [
-  #       "${config.xdg.dataHome}/Steam/logs"
-  #     ],
-  #     "runtime" :
-  #     [
-  #       "${pkgs.opencomposite}/lib/opencomposite"
-  #     ],
-  #     "version" : 1
-  #   }
-  # '';
 }

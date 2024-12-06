@@ -11,8 +11,8 @@
 
   home = {
     stateVersion = "22.11";
-    homeDirectory = lib.mkDefault "/home/yurii";
-    username = "yurii";
+    homeDirectory = lib.mkDefault "/home/vrash";
+    username = "vrash";
 
     packages = with pkgs; [];
   };

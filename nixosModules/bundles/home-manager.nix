@@ -11,7 +11,7 @@
 in {
   options.myNixOS = {
     userName = lib.mkOption {
-      default = "yurii";
+      default = "vrash";
       description = ''
         username
       '';

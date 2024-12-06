@@ -15,7 +15,7 @@
     stylix.enable = lib.mkDefault true;
 
     home-users = {
-      "yurii" = {
+      "vrash" = {
         userConfig = ./home.nix;
         userSettings = {
           extraGroups = ["networkmanager" "wheel" "adbusers"];

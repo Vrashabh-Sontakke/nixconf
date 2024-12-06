@@ -12,11 +12,11 @@
     [
       ./hardware-configuration.nix
       # (import ./disko.nix {device = "/dev/nvme1n1";})
-      (import ./disko.nix {device = "/dev/disk/by-id/nvme-Samsung_SSD_980_PRO_2TB_S736NU0W100374K";})
+      (import ./disko.nix {device = "/dev/disk/by-id/Micron_MTFDHBA256TDV_20452B7CA542";})
 
       inputs.disko.nixosModules.default
 
-      ./experimental/experimental.nix
+      #./experimental/experimental.nix
     ]
     ++ (myLib.filesIn ./included);
   programs.corectrl.enable = true;
@@ -61,7 +61,7 @@
 
     bundles.users.enable = true;
     home-users = {
-      "yurii" = {
+      "vrash" = {
         userConfig = ./home.nix;
         userSettings = {
           extraGroups = ["networkmanager" "wheel" "libvirtd" "docker" "adbusers" "openrazer"];
@@ -72,7 +72,7 @@
     impermanence.enable = true;
     # impermanence.nukeRoot.enable = true;
   };
-  users.users.yurii.hashedPasswordFile = "/persist/passwd";
+  users.users.vrash.hashedPasswordFile = "/persist/passwd";
 
   networking.hostName = "laptop";
   networking.networkmanager.enable = true;
@@ -100,9 +100,6 @@
   programs.zsh.enable = true;
   programs.adb.enable = true;
 
-  programs.alvr.enable = true;
-  programs.alvr.openFirewall = true;
-
   environment.systemPackages = with pkgs; [
     wineWowPackages.stable
     wineWowPackages.waylandFull
@@ -110,5 +107,5 @@
     glib
   ];
 
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 }
